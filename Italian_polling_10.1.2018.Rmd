@@ -5,4 +5,20 @@ date: "10/1/2018"
 output: html_document
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+```
+
+```{r, message=FALSE}
+raw <- read_csv("Raw_Data_2018-10-01.csv")
+```
+Purpose of this document is to show polling results in Italy. 
+
+```{r}
+raw %>%
+ggplot(aes(x = date, y = LN)) + geom_point()
+```
+
+
 
